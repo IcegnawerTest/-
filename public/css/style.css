@@ -1,0 +1,34 @@
+
+
+.icon img {
+    height: 80px;
+    border-radius: 50px;
+}
+
+.header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #195136;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header nav {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header nav a {
+    border: 1px solid #053400;
+    background-color: #0D6863;
+    color: #D0CBC8;
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
