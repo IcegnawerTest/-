@@ -9,7 +9,7 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="/signup">
+                        <form method="POST" action="{{ route('signup_process') }}">
                             @csrf
 
                             <div class="mb-3">
@@ -44,7 +44,7 @@
 
                             <div class="mb-3">
                                 <label for="password-confirm" class="form-label">Подтверждение пароля</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirm" required autocomplete="new-password">
                             </div>
 
                             <div class="mb-3">

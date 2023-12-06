@@ -9,7 +9,7 @@
                     <div class="card-header">Авторизация</div>
 
                     <div class="card-body">
-                        <form method="POST" action="/signin">
+                        <form method="POST" action="{{ route('signin_process') }}">
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="form-label">Почта</label>

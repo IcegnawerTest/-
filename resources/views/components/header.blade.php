@@ -10,12 +10,20 @@
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="#">О нас</a>
 						</li>
+                        @guest
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="/registration">Регистрация</a>
+							<a class="nav-link active" aria-current="page" href="{{ route('signup') }}">Регистрация</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="/login">Вход</a>
+							<a class="nav-link active" aria-current="page" href="{{ route('signin') }}">Вход</a>
 						</li>
+                        @endguest
+                        @auth
+                        <form action="{{ route('signout') }}" method="post" class="form-inline">
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="Выход">
+                        </form>
+                        @endauth
 						<li class="nav-item">
 							<a class="nav-link" href="#">Курсы</a>
 						</li>

@@ -7,7 +7,7 @@
                     <div class="card-header">Авторизация</div>
 
                     <div class="card-body">
-                        <form method="POST" action="/signin">
+                        <form method="POST" action="<?php echo e(route('signin_process')); ?>">
                             <?php echo csrf_field(); ?>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Почта</label>

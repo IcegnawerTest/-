@@ -7,7 +7,7 @@
                     <div class="card-header"><?php echo e(__('Register')); ?></div>
 
                     <div class="card-body">
-                        <form method="POST" action="/signup">
+                        <form method="POST" action="<?php echo e(route('signup_process')); ?>">
                             <?php echo csrf_field(); ?>
 
                             <div class="mb-3">
@@ -84,7 +84,7 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="mb-3">
                                 <label for="password-confirm" class="form-label">Подтверждение пароля</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirm" required autocomplete="new-password">
                             </div>
 
                             <div class="mb-3">

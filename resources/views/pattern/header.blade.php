@@ -26,5 +26,4 @@ rel="stylesheet">
 
         @yield('content')
 </body>
-
 </html>

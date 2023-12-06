@@ -10,12 +10,20 @@
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="#">О нас</a>
 						</li>
+                        <?php if(auth()->guard()->guest()): ?>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="/registration">Регистрация</a>
+							<a class="nav-link active" aria-current="page" href="<?php echo e(route('signup')); ?>">Регистрация</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="/login">Вход</a>
+							<a class="nav-link active" aria-current="page" href="<?php echo e(route('signin')); ?>">Вход</a>
 						</li>
+                        <?php endif; ?>
+                        <?php if(auth()->guard()->check()): ?>
+                        <form action="<?php echo e(route('signout')); ?>" method="post" class="form-inline">
+                            <?php echo csrf_field(); ?>
+                            <input type="submit" class="btn btn-danger" value="Выход">
+                        </form>
+                        <?php endif; ?>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Курсы</a>
 						</li>

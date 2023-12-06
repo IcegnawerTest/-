@@ -40,6 +40,5 @@ rel="stylesheet">
 
         <?php echo $__env->yieldContent('content'); ?>
 </body>
-
 </html>
 <?php /**PATH C:\OpenServer\domains\praktikaUld\resources\views/pattern/header.blade.php ENDPATH**/ ?>
