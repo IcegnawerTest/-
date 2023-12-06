@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+
+use App\Models\Application;
 use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -65,9 +68,6 @@ class CourseController extends Controller
         ], [
             "title-course.required"=>"Поле обязательного заполнения",
             "title-course.max"=>"Имя должно содержать максимум 50 символов",
-
-
-
         ]);
 
         $category_info = $request->all();
@@ -78,19 +78,22 @@ class CourseController extends Controller
 
         return redirect("/admin");
     }
+
+    public function categoryUser()
+    {
+        $categories = Category::all();
+        return view('categoryUser', ['categories' => $categories]);
+    }
+
+    public function filterCourses(Request $request)
+    {
+        $category_id = $request->input('category_id', '1');
+        $courses = Course::where('category_id', $category_id)->get();
+
+        $categories = Category::all(); // Category::where('id', $category_id)->get();
+        return view('categoryUser', ['courses' => $courses, 'categories' => $categories]);
+    }
 }
 
 
 
-
-
-
-
-
-
-// регистраиця, авторизация, личный кабинет представления
-//  регитрация - форма для почта, пароль, подтверждение пароля, имя
-//  авторизация - форма для пароль и почта
-// информация о пользователе выводится, есть кнопочки для редактирования, при редактировании  с возможностями редактирования и выводидтся окошечка с информацией пользователя
-// юзер конртоллер,  2 формы для авторизации и регистрации , 2 формы для валидации, праивла для валидации  как сейм - проверка на схожесть 2 полей пароля
-// функционал не делаем
